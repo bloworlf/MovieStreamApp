@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">MovieStreamApp</string>
+
+    <string name="input_username">Nom d\'utilisateur ou Email</string>
+    <string name="input_password">Mot de passe</string>
+    <string name="login">Se connecter</string>
+    <string name="no_account_yet">Pas encore inscrit(e)?</string>
+    <string name="help">Aide</string>
+
+    <string name="last_name">Nom</string>
+    <string name="first_name">Prénom(s)</string>
+    <string name="username">Nom d\'utilisateur</string>
+    <string name="email">Email</string>
+    <string name="password">Choisissez un mot de passe</string>
+    <string name="confirm_password">Retappez le mot de passe</string>
+    <string name="gender">Je suis</string>
+    <string name="gender_male">un Homme</string>
+    <string name="gender_female">une Femme</string>
+    <string name="register">S\'inscrire</string>
+    <string name="already_registered">Déjà inscrit(e)? \n Connectez-vous</string>
+    <string name="err_msg_last_name">Le nom doit contenir au moins 3 caractères</string>
+    <string name="err_msg_first_name">Le prénom doit contenir au moins 3 caractères</string>
+    <string name="err_msg_email">Votre email doit être authentique</string>
+    <string name="err_msg_incorect_username">Le nom d\'utilisateur doit contenir au moins 6 caracteres</string>
+    <string name="err_msg_taken_username">Ce nom d\'utilisateur est déjà utilisé</string>
+    <string name="err_msg_short_password">Le mot de passe doit contenir au moins 8 caractères</string>
+    <string name="err_msg_wrong_password">Les symbols tels "!, @, #..." ne sont pas autorisés</string>
+    <string name="err_msg_confirm_password">Les mots de passe ne correspondent pas</string>
+    <string name="phone">Téléphone</string>
+    <string name="adress">Adresse</string>
+    <string name="guest">En tant qu\'invité</string>
+    <string name="search">Rechercher</string>
+    <string name="input_text">Search a movie</string>
+</resources>
