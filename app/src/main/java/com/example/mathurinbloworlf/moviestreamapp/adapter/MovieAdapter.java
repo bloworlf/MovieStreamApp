@@ -20,6 +20,7 @@ import com.bumptech.glide.Glide;
 import com.example.mathurinbloworlf.moviestreamapp.R;
 import com.example.mathurinbloworlf.moviestreamapp.constants.MovieDB;
 import com.example.mathurinbloworlf.moviestreamapp.model.Movie;
+import com.example.mathurinbloworlf.moviestreamapp.transform.RoundedTransformation;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -119,14 +120,26 @@ public class MovieAdapter extends ArrayAdapter<Movie> {
 
         int orientation = context.getResources().getConfiguration().orientation;
         if (orientation == Configuration.ORIENTATION_PORTRAIT) {
-            Glide.with(context)
+            //Glide.with(context)
+            //        .load(movie.getPoster_path())
+            //        .thumbnail(Glide.with(context).load(R.drawable.loading))
+            //        .into(viewHolder.movie_poster);
+            Picasso.get()
                     .load(movie.getPoster_path())
-                    .thumbnail(Glide.with(context).load(R.drawable.loading))
+                    .placeholder(R.drawable.loading)
+                    .error(R.drawable.ic_broken_image)
+                    .transform(new RoundedTransformation(8, 4))
                     .into(viewHolder.movie_poster);
         } else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            Glide.with(context)
+            //Glide.with(context)
+            //        .load(movie.getBackdrop_path())
+            //        .thumbnail(Glide.with(context).load(R.drawable.loading))
+            //        .into(viewHolder.movie_poster);
+            Picasso.get()
                     .load(movie.getBackdrop_path())
-                    .thumbnail(Glide.with(context).load(R.drawable.loading))
+                    .placeholder(R.drawable.loading)
+                    .error(R.drawable.ic_broken_image)
+                    .transform(new RoundedTransformation(8, 4))
                     .into(viewHolder.movie_poster);
         }
 

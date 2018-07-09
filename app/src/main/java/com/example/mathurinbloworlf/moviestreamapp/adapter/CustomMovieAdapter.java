@@ -24,6 +24,9 @@ import com.bumptech.glide.Glide;
 import com.example.mathurinbloworlf.moviestreamapp.R;
 import com.example.mathurinbloworlf.moviestreamapp.constants.MovieDB;
 import com.example.mathurinbloworlf.moviestreamapp.model.Movie;
+import com.example.mathurinbloworlf.moviestreamapp.transform.CircleTransform;
+import com.example.mathurinbloworlf.moviestreamapp.transform.RoundedTransformation;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -70,15 +73,27 @@ public class CustomMovieAdapter extends RecyclerView.Adapter<CustomMovieAdapter.
 
         int orientation = context.getResources().getConfiguration().orientation;
         if (orientation == Configuration.ORIENTATION_PORTRAIT) {
-            Glide.with(context)
+            //Glide.with(context)
+            //        .load(movieArrayList.get(position).getPoster_path())
+            //        .thumbnail(Glide.with(context).load(R.drawable.loading))
+            //        .into(holder.imageView);
+            Picasso.get()
                     .load(movieArrayList.get(position).getPoster_path())
-                    .thumbnail(Glide.with(context).load(R.drawable.loading))
+                    .placeholder(R.drawable.loading)
+                    .error(R.drawable.ic_broken_image)
+                    .transform(new RoundedTransformation(8, 4))
                     .into(holder.imageView);
         } else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            Glide.with(context)
+            Picasso.get()
                     .load(movieArrayList.get(position).getBackdrop_path())
-                    .thumbnail(Glide.with(context).load(R.drawable.loading))
+                    .placeholder(R.drawable.loading)
+                    .error(R.drawable.ic_broken_image)
+                    .transform(new RoundedTransformation(8, 4))
                     .into(holder.imageView);
+            //Glide.with(context)
+            //        .load(movieArrayList.get(position).getBackdrop_path())
+            //        .thumbnail(Glide.with(context).load(R.drawable.loading))
+            //        .into(holder.imageView);
         }
 
         //Glide.with(context)
